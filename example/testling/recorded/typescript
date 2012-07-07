@@ -1,0 +1,15 @@
+Script started on Sat 30 Jun 2012 11:58:07 PM PDT
+]0;substack@beep: ~/projects/callback-to-the-future-nodeconf-2012/example/testling[01;32msubstack[00m : [01;34mtestling[00m $ testling test.js --browser=testling.chrome/12.0
+>> beep boop
+TAP version 13
+# json parse
+ok 1 should be equivalent
+
+1..1
+# tests 1
+# pass  1
+
+# ok
+]0;substack@beep: ~/projects/callback-to-the-future-nodeconf-2012/example/testling[01;32msubstack[00m : [01;34mtestling[00m $ exit
+
+Script done on Sat 30 Jun 2012 11:58:24 PM PDT
