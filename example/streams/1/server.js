@@ -2,10 +2,9 @@ var http = require('http');
 var shoe = require('shoe');
 var ecstatic = require('ecstatic')(__dirname+'/static');
 var muxDemux = require('mux-demux');
-var dnode = require('dnode');
 
 var server = http.createServer(ecstatic);
-server.listen(8088);
+server.listen(8087);
 
 var sock = shoe(function (stream) {
     var md = muxDemux();
@@ -13,10 +12,6 @@ var sock = shoe(function (stream) {
     
     var digits = md.createWriteStream('digits');
     var hex = md.createWriteStream('hex');
-    var d = dnode({
-        time : function (cb) { cb(Date.now()) }
-    });
-    d.pipe(md.createStream('dnode')).pipe(d);
     
     var ivs = [
         setInterval(function () {
@@ -24,7 +19,7 @@ var sock = shoe(function (stream) {
         }, 100),
         setInterval(function () {
             hex.write(Math.floor(Math.random() * 16)
-                .toString(16));
+              .toString(16));
         }, 400)
     ];
     stream.on('end', function () {
